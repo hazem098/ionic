@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>bikedetails</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="category"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="gotoadd()">
+        <ion-icon name="add-outline" slot="icon-only">
+          </ion-icon>
+          </ion-button>
+          </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let c of tab" [routerLink]="['detail', c.id]">
+
+        <img [src]="c.image">
+      {{ c.title }}
+
+    </ion-item>
+
+  </ion-list>
+</ion-content>
+ion

@@ -1,0 +1,34 @@
+
+
+<ion-content>
+<div class="upper">
+
+<p id="login">gestion des annonces</p>
+</div>
+<div class="middle">
+  <div class="box">
+    <form #loginForm="ngForm">
+      <p>please login</p>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" placeholder="email" name="email" #email="ngModel" [(ngModel)]="login.email" required></ion-input>
+      <ion-icon class="ion-align-self-center" slot="end" name="mail"></ion-icon>
+      </ion-item>
+      <div *ngIf="email.invalid && email.touched">
+        <ion-text color="danger text-center"></ion-text>
+      </div>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" placeholder="password" name="password" #password="ngModel" [(ngModel)]="login.password" required></ion-input>
+        <ion-icon class="ion-align-self-center" name="eye-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div *ngIf="password.invalid && password.touched ">
+        <ion-text color="danger text-center"></ion-text>
+      </div>
+<div class="btn">
+  <ion-button (click)="gotoannonce()" [disabled]="loginForm.invalid">login</ion-button>
+</div>
+    </form>
+  </div>
+</div>
+</ion-content>
